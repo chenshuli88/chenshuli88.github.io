@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>陈伙夫的独立博客</title>
+  <title>陈伙夫的博客</title>
   
   <subtitle>编码源于生活</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="https://coderchensl.github.io/"/>
+  <link href="https://coderChensl.github.io/"/>
   <updated>2017-09-13T03:04:57.501Z</updated>
-  <id>https://coderchensl.github.io/</id>
+  <id>https://coderChensl.github.io/</id>
   
   <author>
-    <name>Chensl</name>
+    <name>CookChen</name>
     
   </author>
   
@@ -18,8 +18,8 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="https://coderchensl.github.io/2017/09/13/hello-world/"/>
-    <id>https://coderchensl.github.io/2017/09/13/hello-world/</id>
+    <link href="https://coderChensl.github.io/2017/09/13/hello-world/"/>
+    <id>https://coderChensl.github.io/2017/09/13/hello-world/</id>
     <published>2017-09-13T03:04:57.501Z</published>
     <updated>2017-09-13T03:04:57.501Z</updated>
     
