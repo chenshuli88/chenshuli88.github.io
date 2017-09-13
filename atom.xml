@@ -5,9 +5,9 @@
   <subtitle>编码源于生活</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://yoursite.com/"/>
+  <link href="https://coderchensl.github.io/"/>
   <updated>2017-09-13T03:04:57.501Z</updated>
-  <id>http://yoursite.com/</id>
+  <id>https://coderchensl.github.io/</id>
   
   <author>
     <name>Chensl</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="http://yoursite.com/2017/09/13/hello-world/"/>
-    <id>http://yoursite.com/2017/09/13/hello-world/</id>
+    <link href="https://coderchensl.github.io/2017/09/13/hello-world/"/>
+    <id>https://coderchensl.github.io/2017/09/13/hello-world/</id>
     <published>2017-09-13T03:04:57.501Z</published>
     <updated>2017-09-13T03:04:57.501Z</updated>
     
