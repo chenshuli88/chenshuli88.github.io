@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://coderChensl.github.io/"/>
-  <updated>2017-09-14T07:55:35.107Z</updated>
+  <updated>2017-09-14T09:56:27.910Z</updated>
   <id>https://coderChensl.github.io/</id>
   
   <author>
@@ -21,27 +21,17 @@
     <link href="https://coderChensl.github.io/2017/09/14/IDE%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/"/>
     <id>https://coderChensl.github.io/2017/09/14/IDE使用技巧/</id>
     <published>2017-09-14T05:40:32.000Z</published>
-    <updated>2017-09-14T07:55:35.107Z</updated>
+    <updated>2017-09-14T09:56:27.910Z</updated>
     
-    <content type="html"><![CDATA[<p>子曰：“工欲善其事，必先利其器。”要想更加高效的编程，掌握好IDE的快捷键是很有必要的，下面是一些使用技巧↓↓↓</p><table><thead><tr><th>操作</th><th>Eclipse</th><th>IntelliJ IDEA</th><th>HBuilder</th></tr></thead><tbody><tr><td>删除当前行</td><td>Ctrl+D</td><td>Ctrl+Y</td><td>Ctrl+D</td></tr><tr><td>复制当前行</td><td>Ctrl+Alt+↑或者↓</td><td>Ctrl+D</td><td>Ctrl+Shift+R</td></tr><tr><td>整理代码</td><td>Ctrl+Shift+F</td><td>Ctrl+Alt+L</td><td>Ctrl+Shift+F</td></tr><tr><td>查找</td><td>Ctrl+F</td><td>Ctrl+F/Ctrl+R查找替换</td><td>Ctrl+F</td></tr><tr><td>搜索被选中内容的所有引用处</td><td>Ctrl+Alt+H</td><td>Alt+F7</td><td></td></tr><tr><td>转换字母大小写</td><td>Ctrl+Shift+X Ctrl+Shift+Y</td><td>Ctrl+Shift+U</td><td>Ctrl+Shift+X Ctrl+Shift+Y</td></tr><tr><td>行注释/去掉行注释</td><td>Ctrl+/</td><td>Ctrl+/</td><td>Ctrl+/</td></tr><tr><td>块注释</td><td>Ctrl+Shift+/</td><td>Ctrl+Shift+/</td><td>Ctrl+Shift+/</td></tr><tr><td>去掉块注释</td><td>Ctrl+Shift+\</td><td>Ctrl+Shift+/</td><td>Ctrl+Shift+/</td></tr><tr><td>选择所有</td><td>Ctrl+A</td><td>Ctrl+A</td><td>Ctrl+A</td></tr><tr><td>debug下单步进入</td><td>F5</td><td>F7</td><td></td></tr><tr><td>debug下单步跳过</td><td>F6</td><td>F8</td><td></td></tr><tr><td>debug下跳过</td><td>F8</td><td>F9</td><td></td></tr><tr><td>Getters And Setters,toString,Constructor</td><td>右键&gt;&gt;Source</td><td>Alt+Insert</td><td></td></tr><tr><td>快速修复错误</td><td>Ctrl+1</td><td>Alt+Enter</td><td></td></tr><tr><td>自动代码补全</td><td>Alt+/</td><td>Ctrl+J</td><td>Alt+/</td></tr><tr><td>整理import</td><td>Ctrl + Shift + O</td><td>Ctrl + Alt + O</td><td></td></tr><tr><td>撤销</td><td>Ctrl + Z</td><td>Ctrl + Z</td><td>Ctrl + Z</td></tr><tr><td>恢复</td><td>Ctrl + Y</td><td>Ctrl + Shift + Z</td><td>Ctrl + Y</td></tr></tbody></table><p>以上只是博主平时用的比较多的快捷键，当然他们还有很多其他的快捷键，如果有兴趣，可以去尝试了解一下。</p>]]></content>
+    <content type="html"><![CDATA[<p>子曰：“工欲善其事，必先利其器。”要想更加高效的编程，掌握好IDE的快捷键是很有必要的，下面是一些快捷键的使用↓↓↓<br><a id="more"></a></p><table><thead><tr><th>操作</th><th>Eclipse</th><th>IntelliJ IDEA</th><th>HBuilder</th></tr></thead><tbody><tr><td>删除当前行</td><td>Ctrl+D</td><td>Ctrl+Y</td><td>Ctrl+D</td></tr><tr><td>复制当前行</td><td>Ctrl+Alt+↑或者↓</td><td>Ctrl+D</td><td>Ctrl+Shift+R</td></tr><tr><td>整理代码</td><td>Ctrl+Shift+F</td><td>Ctrl+Alt+L</td><td>Ctrl+Shift+F</td></tr><tr><td>查找</td><td>Ctrl+F</td><td>Ctrl+F/Ctrl+R查找替换</td><td>Ctrl+F</td></tr><tr><td>搜索被选中内容的所有引用处</td><td>Ctrl+Alt+H</td><td>Alt+F7</td><td></td></tr><tr><td>转换字母大小写</td><td>Ctrl+Shift+X Ctrl+Shift+Y</td><td>Ctrl+Shift+U</td><td>Ctrl+Shift+X Ctrl+Shift+Y</td></tr><tr><td>行注释/去掉行注释</td><td>Ctrl+/</td><td>Ctrl+/</td><td>Ctrl+/</td></tr><tr><td>块注释</td><td>Ctrl+Shift+/</td><td>Ctrl+Shift+/</td><td>Ctrl+Shift+/</td></tr><tr><td>去掉块注释</td><td>Ctrl+Shift+\</td><td>Ctrl+Shift+/</td><td>Ctrl+Shift+/</td></tr><tr><td>选择所有</td><td>Ctrl+A</td><td>Ctrl+A</td><td>Ctrl+A</td></tr><tr><td>debug下单步进入</td><td>F5</td><td>F7</td><td></td></tr><tr><td>debug下单步跳过</td><td>F6</td><td>F8</td><td></td></tr><tr><td>debug下跳过</td><td>F8</td><td>F9</td><td></td></tr><tr><td>Getters And Setters,toString,Constructor</td><td>右键&gt;&gt;Source</td><td>Alt+Insert</td><td></td></tr><tr><td>快速修复错误</td><td>Ctrl+1</td><td>Alt+Enter</td><td></td></tr><tr><td>自动代码补全</td><td>Alt+/</td><td>Ctrl+J</td><td>Alt+/</td></tr><tr><td>整理import</td><td>Ctrl + Shift + O</td><td>Ctrl + Alt + O</td><td></td></tr><tr><td>撤销</td><td>Ctrl + Z</td><td>Ctrl + Z</td><td>Ctrl + Z</td></tr><tr><td>恢复</td><td>Ctrl + Y</td><td>Ctrl + Shift + Z</td><td>Ctrl + Y</td></tr></tbody></table><p>以上只是博主平时用的比较多的快捷键，当然他们还有很多其他的快捷键，如果有兴趣，可以去尝试了解一下。</p>]]></content>
     
     <summary type="html">
     
-      
-      
-        &lt;p&gt;子曰：“工欲善其事，必先利其器。”要想更加高效的编程，掌握好IDE的快捷键是很有必要的，下面是一些使用技巧↓↓↓&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;操作&lt;/th&gt;
-&lt;th&gt;Eclipse&lt;/th&gt;
-&lt;th&gt;IntelliJ IDEA&lt;/th&gt;
-&lt;th
-      
+      &lt;p&gt;子曰：“工欲善其事，必先利其器。”要想更加高效的编程，掌握好IDE的快捷键是很有必要的，下面是一些快捷键的使用↓↓↓&lt;br&gt;
     
     </summary>
     
-      <category term="Fast Code" scheme="https://coderChensl.github.io/categories/Fast-Code/"/>
+      <category term="干货系列" scheme="https://coderChensl.github.io/categories/%E5%B9%B2%E8%B4%A7%E7%B3%BB%E5%88%97/"/>
     
     
       <category term="eclipse、IDEA、HBuilder" scheme="https://coderChensl.github.io/tags/eclipse%E3%80%81IDEA%E3%80%81HBuilder/"/>
@@ -53,17 +43,13 @@
     <link href="https://coderChensl.github.io/2017/09/14/%E8%A7%A3%E5%86%B3%E5%89%8D%E5%90%8E%E7%AB%AF%E5%88%86%E7%A6%BB%E8%B7%A8%E5%9F%9F%E9%97%AE%E9%A2%98/"/>
     <id>https://coderChensl.github.io/2017/09/14/解决前后端分离跨域问题/</id>
     <published>2017-09-14T02:25:08.000Z</published>
-    <updated>2017-09-14T05:34:45.613Z</updated>
+    <updated>2017-09-14T09:49:00.373Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>最近公司尝试前后端分离，正好遇到跨域问题，便把解决方案写出来分享一下，希望可以帮到各位！！！</p><h2 id="什么是跨域？"><a href="#什么是跨域？" class="headerlink" title="什么是跨域？"></a>什么是跨域？</h2><h3 id="1-概念"><a href="#1-概念" class="headerlink" title="1.概念"></a>1.概念</h3><p>只要协议、域名、端口有任何一个不同，都被当作是不同的域。</p><h3 id="2-举例"><a href="#2-举例" class="headerlink" title="2.举例"></a>2.举例</h3><table><thead><tr><th>URL1</th><th>URL2</th><th>说明</th><th>是否允许通信</th></tr></thead><tbody><tr><td><a href="http://www.a.com/a.js" target="_blank" rel="external">http://www.a.com/a.js</a></td><td><a href="http://www.a.com/b.js" target="_blank" rel="external">http://www.a.com/b.js</a></td><td>同一域名</td><td>允许</td></tr><tr><td><a href="http://www.a.com/lab/a.js" target="_blank" rel="external">http://www.a.com/lab/a.js</a></td><td><a href="http://www.a.com/script/b.js" target="_blank" rel="external">http://www.a.com/script/b.js</a></td><td>同一域名下不同文件夹</td><td>允许</td></tr><tr><td><a href="http://www.a.com:8088/a.js" target="_blank" rel="external">http://www.a.com:8088/a.js</a></td><td><a href="http://www.a.com/b.js" target="_blank" rel="external">http://www.a.com/b.js</a></td><td>同一域名不同端口</td><td>不允许</td></tr><tr><td><a href="https://www.a.com/a.js" target="_blank" rel="external">https://www.a.com/a.js</a></td><td><a href="http://www.a.com/b.js" target="_blank" rel="external">http://www.a.com/b.js</a></td><td>不同协议的同一域名</td><td>不允许</td></tr></tbody></table>]]></content>
+    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>最近公司尝试前后端分离，正好遇到跨域问题，便把解决方案写出来分享一下，希望可以帮到各位！！！<br><a id="more"></a></p><h2 id="什么是跨域？"><a href="#什么是跨域？" class="headerlink" title="什么是跨域？"></a>什么是跨域？</h2><h3 id="1-概念"><a href="#1-概念" class="headerlink" title="1.概念"></a>1.概念</h3><p>只要协议、域名、端口有任何一个不同，都被当作是不同的域。</p><h3 id="2-举例"><a href="#2-举例" class="headerlink" title="2.举例"></a>2.举例</h3><table><thead><tr><th>URL1</th><th>URL2</th><th>说明</th><th>是否允许通信</th></tr></thead><tbody><tr><td><a href="http://www.a.com/a.js" target="_blank" rel="external">http://www.a.com/a.js</a></td><td><a href="http://www.a.com/b.js" target="_blank" rel="external">http://www.a.com/b.js</a></td><td>同一域名</td><td>允许</td></tr><tr><td><a href="http://www.a.com/lab/a.js" target="_blank" rel="external">http://www.a.com/lab/a.js</a></td><td><a href="http://www.a.com/script/b.js" target="_blank" rel="external">http://www.a.com/script/b.js</a></td><td>同一域名下不同文件夹</td><td>允许</td></tr><tr><td><a href="http://www.a.com:8088/a.js" target="_blank" rel="external">http://www.a.com:8088/a.js</a></td><td><a href="http://www.a.com/b.js" target="_blank" rel="external">http://www.a.com/b.js</a></td><td>同一域名不同端口</td><td>不允许</td></tr><tr><td><a href="https://www.a.com/a.js" target="_blank" rel="external">https://www.a.com/a.js</a></td><td><a href="http://www.a.com/b.js" target="_blank" rel="external">http://www.a.com/b.js</a></td><td>不同协议的同一域名</td><td>不允许</td></tr></tbody></table>]]></content>
     
     <summary type="html">
     
-      
-      
-        &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;最近公司尝试前后端分离，正好遇到跨域问题，便把解决方案写出来分享一下，希望可以帮到各位！！！&lt;/p&gt;
-&lt;h2 id=&quot;什么是跨域？&quot;&gt;&lt;a 
-      
+      &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;最近公司尝试前后端分离，正好遇到跨域问题，便把解决方案写出来分享一下，希望可以帮到各位！！！&lt;br&gt;
     
     </summary>
     
