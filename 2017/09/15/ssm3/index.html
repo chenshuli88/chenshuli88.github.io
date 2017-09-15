@@ -97,7 +97,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="java框架、maven、spring mvc," />
 
 
 
@@ -115,13 +115,25 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="陈伙夫的博客">
-<meta property="og:url" content="https://coderChensl.github.io/index.html">
+<meta name="description" content="1.前言  1.1博主也是一名正在学习的coder，本博客是在学习他人优秀的博客后加上自己的一点总结，有什么问题可以留言我们相互讨论，博主会不定期回复  1.2本系列是面向初级开发者，主要是搭建起一套目前流行的java框架  1.3上节已经讲解maven项目的搭建，接下来加入spring mvc">
+<meta name="keywords" content="java框架、maven、spring mvc">
+<meta property="og:type" content="article">
+<meta property="og:title" content="干货系列1.3--spring+springmvc+mybatis+maven之springmvc">
+<meta property="og:url" content="https://coderChensl.github.io/2017/09/15/ssm3/index.html">
 <meta property="og:site_name" content="陈伙夫的博客">
+<meta property="og:description" content="1.前言  1.1博主也是一名正在学习的coder，本博客是在学习他人优秀的博客后加上自己的一点总结，有什么问题可以留言我们相互讨论，博主会不定期回复  1.2本系列是面向初级开发者，主要是搭建起一套目前流行的java框架  1.3上节已经讲解maven项目的搭建，接下来加入spring mvc">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://i.imgur.com/sl7Nvwq.png">
+<meta property="og:image" content="https://i.imgur.com/VOsh499.png">
+<meta property="og:image" content="https://i.imgur.com/sFyFGhk.png">
+<meta property="og:image" content="https://i.imgur.com/dEILGor.png">
+<meta property="og:image" content="https://i.imgur.com/UsRiCK0.png">
+<meta property="og:image" content="https://i.imgur.com/3wW12Kk.png">
+<meta property="og:updated_time" content="2017-09-15T09:32:07.626Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="陈伙夫的博客">
+<meta name="twitter:title" content="干货系列1.3--spring+springmvc+mybatis+maven之springmvc">
+<meta name="twitter:description" content="1.前言  1.1博主也是一名正在学习的coder，本博客是在学习他人优秀的博客后加上自己的一点总结，有什么问题可以留言我们相互讨论，博主会不定期回复  1.2本系列是面向初级开发者，主要是搭建起一套目前流行的java框架  1.3上节已经讲解maven项目的搭建，接下来加入spring mvc">
+<meta name="twitter:image" content="https://i.imgur.com/sl7Nvwq.png">
 
 
 
@@ -151,13 +163,13 @@
 
 
 
-  <link rel="canonical" href="https://coderChensl.github.io/"/>
+  <link rel="canonical" href="https://coderChensl.github.io/2017/09/15/ssm3/"/>
 
 
 
 
 
-  <title>陈伙夫的博客</title>
+  <title>干货系列1.3--spring+springmvc+mybatis+maven之springmvc | 陈伙夫的博客</title>
   
 
 
@@ -176,8 +188,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -280,9 +291,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -312,9 +323,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/09/15/ssm3/" itemprop="url">干货系列1.3--spring+springmvc+mybatis+maven之springmvc</a></h1>
+          <h1 class="post-title" itemprop="name headline">干货系列1.3--spring+springmvc+mybatis+maven之springmvc</h1>
         
 
         <div class="post-meta">
@@ -408,16 +417,13 @@
       
 
       
-        
-          <h2 id="1-前言"><a href="#1-前言" class="headerlink" title="1.前言"></a>1.前言</h2><p>  1.1博主也是一名正在学习的coder，本博客是在学习他人优秀的博客后加上自己的一点总结，有什么问题可以留言我们相互讨论，博主会不定期回复<br>  1.2本系列是面向初级开发者，主要是搭建起一套目前流行的java框架<br>  1.3<a href="https://coderChensl.github.io/2017/09/15/ssm2/">上节</a>已经讲解maven项目的搭建，接下来加入spring mvc<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/09/15/ssm3/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
+        <h2 id="1-前言"><a href="#1-前言" class="headerlink" title="1.前言"></a>1.前言</h2><p>  1.1博主也是一名正在学习的coder，本博客是在学习他人优秀的博客后加上自己的一点总结，有什么问题可以留言我们相互讨论，博主会不定期回复<br>  1.2本系列是面向初级开发者，主要是搭建起一套目前流行的java框架<br>  1.3<a href="https://coderChensl.github.io/2017/09/15/ssm2/">上节</a>已经讲解maven项目的搭建，接下来加入spring mvc<br><a id="more"></a></p>
+<h2 id="2-配置"><a href="#2-配置" class="headerlink" title="2.配置"></a>2.配置</h2><p>   2.1修改pom.xml<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line">   &lt;project xmlns=&quot;http://maven.apache.org/POM/4.0.0&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</div><div class="line">        xsi:schemaLocation=&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd&quot;&gt;</div><div class="line">   &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;</div><div class="line">   &lt;groupId&gt;com.tmg.cookChen&lt;/groupId&gt;</div><div class="line">   &lt;artifactId&gt;ssm&lt;/artifactId&gt;</div><div class="line">   &lt;packaging&gt;war&lt;/packaging&gt;</div><div class="line">   &lt;version&gt;1.0-SNAPSHOT&lt;/version&gt;</div><div class="line">   &lt;name&gt;ssm Maven Webapp&lt;/name&gt;</div><div class="line">   &lt;url&gt;http://maven.apache.org&lt;/url&gt;</div><div class="line"></div><div class="line">   &lt;!--   声明版本 --&gt;</div><div class="line">   &lt;properties&gt;</div><div class="line">       &lt;spring.version&gt;4.3.6.RELEASE&lt;/spring.version&gt;</div><div class="line">   &lt;/properties&gt;</div><div class="line"></div><div class="line">   &lt;dependencies&gt;</div><div class="line">       &lt;!--测试包--&gt;</div><div class="line">       &lt;dependency&gt;</div><div class="line">           &lt;groupId&gt;junit&lt;/groupId&gt;</div><div class="line">           &lt;artifactId&gt;junit&lt;/artifactId&gt;</div><div class="line">           &lt;version&gt;3.8.1&lt;/version&gt;</div><div class="line">           &lt;scope&gt;test&lt;/scope&gt;</div><div class="line">       &lt;/dependency&gt;</div><div class="line"></div><div class="line">       &lt;!--spring 包--&gt;</div><div class="line">       &lt;dependency&gt;</div><div class="line">           &lt;groupId&gt;org.springframework&lt;/groupId&gt;</div><div class="line">           &lt;artifactId&gt;spring-webmvc&lt;/artifactId&gt;</div><div class="line">           &lt;version&gt;$&#123;spring.version&#125;&lt;/version&gt;</div><div class="line">       &lt;/dependency&gt;</div><div class="line">   &lt;/dependencies&gt;</div><div class="line"></div><div class="line"></div><div class="line">   &lt;build&gt;</div><div class="line">       &lt;finalName&gt;ssm&lt;/finalName&gt;</div><div class="line">   &lt;/build&gt;</div><div class="line">&lt;/project&gt;</div></pre></td></tr></table></figure></p>
+<p>   第一次需要去下jar包，所有会有点慢。。。<br>   2.2修改web.xml<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line">	&lt;!DOCTYPE web-app PUBLIC</div><div class="line">        &quot;-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN&quot;</div><div class="line">        &quot;http://java.sun.com/dtd/web-app_2_3.dtd&quot; &gt;</div><div class="line"></div><div class="line">&lt;web-app&gt;</div><div class="line">    &lt;display-name&gt;Archetype Created Web Application&lt;/display-name&gt;</div><div class="line">    &lt;!-- 加载Srping配置文件 --&gt;</div><div class="line">    &lt;context-param&gt;</div><div class="line">        &lt;param-name&gt;contextConfigLocation&lt;/param-name&gt;</div><div class="line">        &lt;param-value&gt;classpath:/spring/applicationContext.xml&lt;/param-value&gt;</div><div class="line">    &lt;/context-param&gt;</div><div class="line">    &lt;!-- Spring 监听 --&gt;</div><div class="line">    &lt;listener&gt;</div><div class="line">        &lt;listener-class&gt;org.springframework.web.context.ContextLoaderListener&lt;/listener-class&gt;</div><div class="line">    &lt;/listener&gt;</div><div class="line">    &lt;!-- SpringMVC配置 --&gt;</div><div class="line">    &lt;servlet&gt;</div><div class="line">        &lt;servlet-name&gt;spring mvc&lt;/servlet-name&gt;</div><div class="line">        &lt;servlet-class&gt;org.springframework.web.servlet.DispatcherServlet&lt;/servlet-class&gt;</div><div class="line">        &lt;!-- 自定义spring mvc的配置文件名称和路径 --&gt;</div><div class="line">        &lt;init-param&gt;</div><div class="line">            &lt;param-name&gt;contextConfigLocation&lt;/param-name&gt;</div><div class="line">            &lt;param-value&gt;classpath:/springmvc/spring-mvc-servlet.xml&lt;/param-value&gt;</div><div class="line">        &lt;/init-param&gt;</div><div class="line">    &lt;/servlet&gt;</div><div class="line">    &lt;!-- spring mvc 请求后缀 --&gt;</div><div class="line">    &lt;servlet-mapping&gt;</div><div class="line">        &lt;servlet-name&gt;spring mvc&lt;/servlet-name&gt;</div><div class="line">        &lt;url-pattern&gt;/&lt;/url-pattern&gt;</div><div class="line">    &lt;/servlet-mapping&gt;</div><div class="line"></div><div class="line">    &lt;welcome-file-list&gt;</div><div class="line">        &lt;welcome-file&gt;index.jsp&lt;/welcome-file&gt;</div><div class="line">    &lt;/welcome-file-list&gt;</div><div class="line">&lt;/web-app&gt;</div></pre></td></tr></table></figure></p>
+<p>   2.3建以下目录结构<br>   <img src="https://i.imgur.com/sl7Nvwq.png" alt=""><br>   2.3修改spring-mvc-servlet.xml<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">	&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</div><div class="line">&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;</div><div class="line">       xmlns:mvc=&quot;http://www.springframework.org/schema/mvc&quot;</div><div class="line">       xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</div><div class="line">       xmlns:context=&quot;http://www.springframework.org/schema/context&quot;</div><div class="line">       xsi:schemaLocation=&quot;http://www.springframework.org/schema/beans</div><div class="line">      http://www.springframework.org/schema/beans/spring-beans-4.2.xsd</div><div class="line">      http://www.springframework.org/schema/mvc</div><div class="line">      http://www.springframework.org/schema/mvc/spring-mvc-4.2.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd&quot;&gt;</div><div class="line"></div><div class="line">    &lt;!-- 激活@Controller模式 --&gt;</div><div class="line">    &lt;mvc:annotation-driven/&gt;</div><div class="line">    &lt;!-- 对包中的所有类进行扫描，以完成Bean创建和自动依赖注入的功能  --&gt;</div><div class="line">    &lt;context:component-scan base-package=&quot;com.cookChen.controller&quot;/&gt;</div><div class="line"></div><div class="line">    &lt;!-- 定义跳转的文件的前后缀 ，视图模式配置--&gt;</div><div class="line">    &lt;bean class=&quot;org.springframework.web.servlet.view.InternalResourceViewResolver&quot;&gt;</div><div class="line">        &lt;property name=&quot;prefix&quot; value=&quot;/WEB-INF/jsp/&quot; /&gt;</div><div class="line">        &lt;property name=&quot;suffix&quot; value=&quot;.jsp&quot; /&gt;</div><div class="line">    &lt;/bean&gt;</div><div class="line"></div><div class="line">&lt;/beans&gt;</div></pre></td></tr></table></figure></p>
+<p>   2.4修改applicationContext.xml<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">	&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</div><div class="line">&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;</div><div class="line">       xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</div><div class="line">       xsi:schemaLocation=&quot;</div><div class="line">            http://www.springframework.org/schema/beans</div><div class="line">            http://www.springframework.org/schema/beans/spring-beans-4.0.xsd&quot;&gt;</div><div class="line"></div><div class="line"></div><div class="line">&lt;/beans&gt;</div></pre></td></tr></table></figure></p>
+<p>  2.5在WEB-INF/jsp下新建pageOne.jsp文件<br>  <img src="https://i.imgur.com/VOsh499.png" alt=""><br>  2.6修改index.jsp中的内容<br>  <img src="https://i.imgur.com/sFyFGhk.png" alt=""><br>  2.7新建控制层代码<br>  <img src="https://i.imgur.com/dEILGor.png" alt=""><br>  2.8部署项目到tomcat，然后run或者debug，看到如下效果<br>  <img src="https://i.imgur.com/UsRiCK0.png" alt=""><br>  点击go to page one ，跳转到pageone页面<br>  <img src="https://i.imgur.com/3wW12Kk.png" alt=""><br> 以上就是本次的全部内容，下一章会加入spring。。。</p>
+
       
     </div>
     
@@ -427,355 +433,88 @@
     
 
     
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>博主还要存钱娶媳妇。。。</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
 
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/uploads/wechat-reward-image.png" alt="CookChen 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/uploads/alipay.jpg" alt="CookChen 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    CookChen
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://coderChensl.github.io/2017/09/15/ssm3/" title="干货系列1.3--spring+springmvc+mybatis+maven之springmvc">https://coderChensl.github.io/2017/09/15/ssm3/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
     
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://coderChensl.github.io/2017/09/15/ssm2/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="CookChen">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="陈伙夫的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/09/15/ssm2/" itemprop="url">干货系列1.2--spring+springmvc+mybatis+maven之idea搭建maven项目结构</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-15T11:50:26+08:00">
-                2017-09-15
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <div class="post-tags">
           
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/干货系列/" itemprop="url" rel="index">
-                    <span itemprop="name">干货系列</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
+            <a href="/tags/java框架、maven、spring-mvc/" rel="tag"># java框架、maven、spring mvc</a>
           
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/09/15/ssm2/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/09/15/ssm2/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2017/09/15/ssm2/" class="leancloud_visitors" data-flag-title="干货系列1.2--spring+springmvc+mybatis+maven之idea搭建maven项目结构">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
+      
 
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
+      
       
       
 
       
-        
-          <h2 id="1-前言"><a href="#1-前言" class="headerlink" title="1.前言"></a>1.前言</h2><p>  1.1博主也是一名正在学习的coder，本博客是在学习他人优秀的博客后加上自己的一点总结，有什么问题可以留言我们相互讨论，博主会不定期回复<br>  1.2本系列是面向初级开发者，主要是搭建起一套目前流行的java框架<br>  1.3<a href="https://coderChensl.github.io/2017/09/15/ssm1/">上节</a>已经讲解maven的环境配置，本节将介绍用idea搭建maven项目结构<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/09/15/ssm2/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/09/15/ssm2/" rel="next" title="干货系列1.2--spring+springmvc+mybatis+maven之idea搭建maven项目结构">
+                <i class="fa fa-chevron-left"></i> 干货系列1.2--spring+springmvc+mybatis+maven之idea搭建maven项目结构
+              </a>
+            
           </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
 
-    
+          <span class="post-nav-divider"></span>
 
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://coderChensl.github.io/2017/09/15/ssm1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="CookChen">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="陈伙夫的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/09/15/ssm1/" itemprop="url">干货系列1.1--spring+springmvc+mybatis+maven之maven环境配置</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+          <div class="post-nav-prev post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-15T10:15:48+08:00">
-                2017-09-15
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/干货系列/" itemprop="url" rel="index">
-                    <span itemprop="name">干货系列</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/09/15/ssm1/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/09/15/ssm1/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2017/09/15/ssm1/" class="leancloud_visitors" data-flag-title="干货系列1.1--spring+springmvc+mybatis+maven之maven环境配置">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          <h2 id="1-前言"><a href="#1-前言" class="headerlink" title="1.前言"></a>1.前言</h2><p>  1.1博主也是一名正在学习的coder，本博客是在学习他人优秀的博客后加上自己的一点总结，有什么问题可以留言我们相互讨论，博主会不定期回复<br>  1.2本系列是面向初级开发者，主要是搭建起一套目前流行的java框架<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/09/15/ssm1/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -785,178 +524,11 @@
   </article>
 
 
-    
-      
 
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://coderChensl.github.io/2017/09/14/IDE使用技巧/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="CookChen">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="陈伙夫的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/09/14/IDE使用技巧/" itemprop="url">IDE使用技巧</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-14T13:40:32+08:00">
-                2017-09-14
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/干货系列/" itemprop="url" rel="index">
-                    <span itemprop="name">干货系列</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/09/14/IDE使用技巧/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/09/14/IDE使用技巧/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2017/09/14/IDE使用技巧/" class="leancloud_visitors" data-flag-title="IDE使用技巧">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>子曰：“工欲善其事，必先利其器。”要想更加高效的编程，掌握好IDE的快捷键是很有必要的，下面是一些快捷键的使用↓↓↓<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/09/14/IDE使用技巧/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
+    <div class="post-spread">
       
     </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
   </div>
-  
-  
-  
-  </article>
-
-
-    
-  </section>
-
-  
 
 
           </div>
@@ -964,6 +536,17 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -984,8 +567,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           
             <img class="site-author-image" itemprop="image"
@@ -1071,6 +663,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-前言"><span class="nav-number">1.</span> <span class="nav-text">1.前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-配置"><span class="nav-number">2.</span> <span class="nav-text">2.配置</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -1205,6 +813,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
 
   
 
@@ -1222,6 +834,18 @@
       <script id="dsq-count-scr" src="https://.disqus.com/count.js" async></script>
     
 
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'https://coderChensl.github.io/2017/09/15/ssm3/';
+          this.page.identifier = '2017/09/15/ssm3/';
+          this.page.title = '干货系列1.3--spring+springmvc+mybatis+maven之springmvc';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
     
 
   

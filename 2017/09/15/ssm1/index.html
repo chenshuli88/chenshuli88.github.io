@@ -97,7 +97,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="java框架、maven," />
 
 
 
@@ -115,17 +115,27 @@
 
 
 
-<meta name="description" content="前言最近公司尝试前后端分离，正好遇到跨域问题，便把解决方案写出来分享一下，希望可以帮到各位！！！">
+<meta name="description" content="1.前言  1.1博主也是一名正在学习的coder，本博客是在学习他人优秀的博客后加上自己的一点总结，有什么问题可以留言我们相互讨论，博主会不定期回复  1.2本系列是面向初级开发者，主要是搭建起一套目前流行的java框架">
+<meta name="keywords" content="java框架、maven">
 <meta property="og:type" content="article">
-<meta property="og:title" content="解决前后端分离跨域问题">
-<meta property="og:url" content="https://coderChensl.github.io/2017/09/14/解决前后端分离跨域问题/index.html">
+<meta property="og:title" content="干货系列1.1--spring+springmvc+mybatis+maven之maven环境配置">
+<meta property="og:url" content="https://coderChensl.github.io/2017/09/15/ssm1/index.html">
 <meta property="og:site_name" content="陈伙夫的博客">
-<meta property="og:description" content="前言最近公司尝试前后端分离，正好遇到跨域问题，便把解决方案写出来分享一下，希望可以帮到各位！！！">
+<meta property="og:description" content="1.前言  1.1博主也是一名正在学习的coder，本博客是在学习他人优秀的博客后加上自己的一点总结，有什么问题可以留言我们相互讨论，博主会不定期回复  1.2本系列是面向初级开发者，主要是搭建起一套目前流行的java框架">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-14T09:49:00.373Z">
+<meta property="og:image" content="https://i.imgur.com/G3moheY.png">
+<meta property="og:image" content="https://i.imgur.com/S2PxhVG.png">
+<meta property="og:image" content="https://i.imgur.com/ctWf1ze.png">
+<meta property="og:image" content="https://i.imgur.com/UJ1N4j4.png">
+<meta property="og:image" content="https://i.imgur.com/dOetg0x.png">
+<meta property="og:image" content="https://i.imgur.com/bkNWH1Q.png">
+<meta property="og:image" content="https://i.imgur.com/azcFJ9J.png">
+<meta property="og:image" content="https://i.imgur.com/wjLaIfR.png">
+<meta property="og:updated_time" content="2017-09-15T03:47:21.125Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="解决前后端分离跨域问题">
-<meta name="twitter:description" content="前言最近公司尝试前后端分离，正好遇到跨域问题，便把解决方案写出来分享一下，希望可以帮到各位！！！">
+<meta name="twitter:title" content="干货系列1.1--spring+springmvc+mybatis+maven之maven环境配置">
+<meta name="twitter:description" content="1.前言  1.1博主也是一名正在学习的coder，本博客是在学习他人优秀的博客后加上自己的一点总结，有什么问题可以留言我们相互讨论，博主会不定期回复  1.2本系列是面向初级开发者，主要是搭建起一套目前流行的java框架">
+<meta name="twitter:image" content="https://i.imgur.com/G3moheY.png">
 
 
 
@@ -155,13 +165,13 @@
 
 
 
-  <link rel="canonical" href="https://coderChensl.github.io/2017/09/14/解决前后端分离跨域问题/"/>
+  <link rel="canonical" href="https://coderChensl.github.io/2017/09/15/ssm1/"/>
 
 
 
 
 
-  <title>解决前后端分离跨域问题 | 陈伙夫的博客</title>
+  <title>干货系列1.1--spring+springmvc+mybatis+maven之maven环境配置 | 陈伙夫的博客</title>
   
 
 
@@ -298,7 +308,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://coderChensl.github.io/2017/09/14/解决前后端分离跨域问题/">
+    <link itemprop="mainEntityOfPage" href="https://coderChensl.github.io/2017/09/15/ssm1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="CookChen">
@@ -315,7 +325,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">解决前后端分离跨域问题</h1>
+          <h1 class="post-title" itemprop="name headline">干货系列1.1--spring+springmvc+mybatis+maven之maven环境配置</h1>
         
 
         <div class="post-meta">
@@ -327,8 +337,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-14T10:25:08+08:00">
-                2017-09-14
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-15T10:15:48+08:00">
+                2017-09-15
               </time>
             
 
@@ -350,8 +360,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/java/" itemprop="url" rel="index">
-                    <span itemprop="name">java</span>
+                  <a href="/categories/干货系列/" itemprop="url" rel="index">
+                    <span itemprop="name">干货系列</span>
                   </a>
                 </span>
 
@@ -368,9 +378,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/09/14/解决前后端分离跨域问题/#comments" itemprop="discussionUrl">
+                <a href="/2017/09/15/ssm1/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/09/14/解决前后端分离跨域问题/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2017/09/15/ssm1/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -378,7 +388,7 @@
 
           
           
-             <span id="/2017/09/14/解决前后端分离跨域问题/" class="leancloud_visitors" data-flag-title="解决前后端分离跨域问题">
+             <span id="/2017/09/15/ssm1/" class="leancloud_visitors" data-flag-title="干货系列1.1--spring+springmvc+mybatis+maven之maven环境配置">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -409,44 +419,10 @@
       
 
       
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>最近公司尝试前后端分离，正好遇到跨域问题，便把解决方案写出来分享一下，希望可以帮到各位！！！<br><a id="more"></a></p>
-<h2 id="什么是跨域？"><a href="#什么是跨域？" class="headerlink" title="什么是跨域？"></a>什么是跨域？</h2><h3 id="1-概念"><a href="#1-概念" class="headerlink" title="1.概念"></a>1.概念</h3><p>只要协议、域名、端口有任何一个不同，都被当作是不同的域。</p>
-<h3 id="2-举例"><a href="#2-举例" class="headerlink" title="2.举例"></a>2.举例</h3><table>
-<thead>
-<tr>
-<th>URL1</th>
-<th>URL2</th>
-<th>说明</th>
-<th>是否允许通信</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="http://www.a.com/a.js" target="_blank" rel="external">http://www.a.com/a.js</a></td>
-<td><a href="http://www.a.com/b.js" target="_blank" rel="external">http://www.a.com/b.js</a></td>
-<td>同一域名</td>
-<td>允许</td>
-</tr>
-<tr>
-<td><a href="http://www.a.com/lab/a.js" target="_blank" rel="external">http://www.a.com/lab/a.js</a></td>
-<td><a href="http://www.a.com/script/b.js" target="_blank" rel="external">http://www.a.com/script/b.js</a></td>
-<td>同一域名下不同文件夹</td>
-<td>允许</td>
-</tr>
-<tr>
-<td><a href="http://www.a.com:8088/a.js" target="_blank" rel="external">http://www.a.com:8088/a.js</a></td>
-<td><a href="http://www.a.com/b.js" target="_blank" rel="external">http://www.a.com/b.js</a></td>
-<td>同一域名不同端口</td>
-<td>不允许</td>
-</tr>
-<tr>
-<td><a href="https://www.a.com/a.js" target="_blank" rel="external">https://www.a.com/a.js</a></td>
-<td><a href="http://www.a.com/b.js" target="_blank" rel="external">http://www.a.com/b.js</a></td>
-<td>不同协议的同一域名</td>
-<td>不允许</td>
-</tr>
-</tbody>
-</table>
+        <h2 id="1-前言"><a href="#1-前言" class="headerlink" title="1.前言"></a>1.前言</h2><p>  1.1博主也是一名正在学习的coder，本博客是在学习他人优秀的博客后加上自己的一点总结，有什么问题可以留言我们相互讨论，博主会不定期回复<br>  1.2本系列是面向初级开发者，主要是搭建起一套目前流行的java框架<br><a id="more"></a></p>
+<h2 id="2-maven的作用"><a href="#2-maven的作用" class="headerlink" title="2.maven的作用"></a>2.maven的作用</h2><p>  2.1省去开发过程中手动去找jar包的麻烦<br>  2.2统一开发规范与工具，统一管理jar包</p>
+<h2 id="3-环境配置"><a href="#3-环境配置" class="headerlink" title="3.环境配置"></a>3.环境配置</h2><p>  3.1在安装配置前，确保已有jdk环境<br>  3.2到<a href="http://maven.apache.org/download.cgi" target="_blank" rel="external">官网下载</a>maven,如图所示<img src="https://i.imgur.com/G3moheY.png" alt=""><br>  3.3下载完成后，解压到你想要的目录里面，然后配置环境变量，和JDK的环境变量配置类似<br>  <img src="https://i.imgur.com/S2PxhVG.png" alt=""><br>  <img src="https://i.imgur.com/ctWf1ze.png" alt=""><br>  <img src="https://i.imgur.com/UJ1N4j4.png" alt=""><br>  3.4配置完成后，Windows+R输入cmd打开命令窗口，输入mvn -v,如果有下面的内容就表示配置成功<br>  <img src="https://i.imgur.com/dOetg0x.png" alt=""><br>  3.5maven的默认仓库是在 C:\Users\Administrator.m2\repository 目录下，防止占C盘的内存以及系统挂了以后又要重新下载，我们把本地仓库修改成我们自己的路径，在D盘新建文件夹maven_repository，然后找到你放maven的目录，打开D:\apache-maven-3.5.0\conf\settings.xml文件，修改相应的路径<br>  <img src="https://i.imgur.com/bkNWH1Q.png" alt=""></p>
+<h2 id="4-IDEA集成maven"><a href="#4-IDEA集成maven" class="headerlink" title="4.IDEA集成maven"></a>4.IDEA集成maven</h2><p>  4.1打开IDEA软件，点击File,选择settings,搜索maven,如下图<br>  <img src="https://i.imgur.com/azcFJ9J.png" alt=""><br>  4.2修改Maven home directory:的路径为自己的maven路径，User settings files为自己的settings.xml文件，勾选Override，如图所示<br>  <img src="https://i.imgur.com/wjLaIfR.png" alt=""><br>以上就是maven的环境配置，希望可以帮到您，谢谢！</p>
 
       
     </div>
@@ -496,7 +472,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://coderChensl.github.io/2017/09/14/解决前后端分离跨域问题/" title="解决前后端分离跨域问题">https://coderChensl.github.io/2017/09/14/解决前后端分离跨域问题/</a>
+    <a href="https://coderChensl.github.io/2017/09/15/ssm1/" title="干货系列1.1--spring+springmvc+mybatis+maven之maven环境配置">https://coderChensl.github.io/2017/09/15/ssm1/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -509,6 +485,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/java框架、maven/" rel="tag"># java框架、maven</a>
+          
+        </div>
+      
 
       
       
@@ -518,14 +500,18 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2017/09/14/IDE使用技巧/" rel="next" title="IDE使用技巧">
+                <i class="fa fa-chevron-left"></i> IDE使用技巧
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/09/14/IDE使用技巧/" rel="prev" title="IDE使用技巧">
-                IDE使用技巧 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/09/15/ssm2/" rel="prev" title="干货系列1.2--spring+springmvc+mybatis+maven之idea搭建maven项目结构">
+                干货系列1.2--spring+springmvc+mybatis+maven之idea搭建maven项目结构 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -613,7 +599,7 @@
             
               <a href="/archives">
             
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -624,7 +610,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">1</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -635,7 +621,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -691,7 +677,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是跨域？"><span class="nav-number">2.</span> <span class="nav-text">什么是跨域？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-概念"><span class="nav-number">2.1.</span> <span class="nav-text">1.概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-举例"><span class="nav-number">2.2.</span> <span class="nav-text">2.举例</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-前言"><span class="nav-number">1.</span> <span class="nav-text">1.前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-maven的作用"><span class="nav-number">2.</span> <span class="nav-text">2.maven的作用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-环境配置"><span class="nav-number">3.</span> <span class="nav-text">3.环境配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-IDEA集成maven"><span class="nav-number">4.</span> <span class="nav-text">4.IDEA集成maven</span></a></li></ol></div>
             
 
           </div>
@@ -855,9 +841,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'https://coderChensl.github.io/2017/09/14/解决前后端分离跨域问题/';
-          this.page.identifier = '2017/09/14/解决前后端分离跨域问题/';
-          this.page.title = '解决前后端分离跨域问题';
+          this.page.url = 'https://coderChensl.github.io/2017/09/15/ssm1/';
+          this.page.identifier = '2017/09/15/ssm1/';
+          this.page.title = '干货系列1.1--spring+springmvc+mybatis+maven之maven环境配置';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://.disqus.com/embed.js';

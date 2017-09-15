@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://coderChensl.github.io/"/>
-  <updated>2017-09-14T09:56:27.910Z</updated>
+  <updated>2017-09-15T09:32:07.626Z</updated>
   <id>https://coderChensl.github.io/</id>
   
   <author>
@@ -15,6 +15,72 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>干货系列1.3--spring+springmvc+mybatis+maven之springmvc</title>
+    <link href="https://coderChensl.github.io/2017/09/15/ssm3/"/>
+    <id>https://coderChensl.github.io/2017/09/15/ssm3/</id>
+    <published>2017-09-15T07:27:38.000Z</published>
+    <updated>2017-09-15T09:32:07.626Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="1-前言"><a href="#1-前言" class="headerlink" title="1.前言"></a>1.前言</h2><p>  1.1博主也是一名正在学习的coder，本博客是在学习他人优秀的博客后加上自己的一点总结，有什么问题可以留言我们相互讨论，博主会不定期回复<br>  1.2本系列是面向初级开发者，主要是搭建起一套目前流行的java框架<br>  1.3<a href="https://coderChensl.github.io/2017/09/15/ssm2/">上节</a>已经讲解maven项目的搭建，接下来加入spring mvc<br><a id="more"></a></p><h2 id="2-配置"><a href="#2-配置" class="headerlink" title="2.配置"></a>2.配置</h2><p>   2.1修改pom.xml<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line">   &lt;project xmlns=&quot;http://maven.apache.org/POM/4.0.0&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</div><div class="line">        xsi:schemaLocation=&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd&quot;&gt;</div><div class="line">   &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;</div><div class="line">   &lt;groupId&gt;com.tmg.cookChen&lt;/groupId&gt;</div><div class="line">   &lt;artifactId&gt;ssm&lt;/artifactId&gt;</div><div class="line">   &lt;packaging&gt;war&lt;/packaging&gt;</div><div class="line">   &lt;version&gt;1.0-SNAPSHOT&lt;/version&gt;</div><div class="line">   &lt;name&gt;ssm Maven Webapp&lt;/name&gt;</div><div class="line">   &lt;url&gt;http://maven.apache.org&lt;/url&gt;</div><div class="line"></div><div class="line">   &lt;!--   声明版本 --&gt;</div><div class="line">   &lt;properties&gt;</div><div class="line">       &lt;spring.version&gt;4.3.6.RELEASE&lt;/spring.version&gt;</div><div class="line">   &lt;/properties&gt;</div><div class="line"></div><div class="line">   &lt;dependencies&gt;</div><div class="line">       &lt;!--测试包--&gt;</div><div class="line">       &lt;dependency&gt;</div><div class="line">           &lt;groupId&gt;junit&lt;/groupId&gt;</div><div class="line">           &lt;artifactId&gt;junit&lt;/artifactId&gt;</div><div class="line">           &lt;version&gt;3.8.1&lt;/version&gt;</div><div class="line">           &lt;scope&gt;test&lt;/scope&gt;</div><div class="line">       &lt;/dependency&gt;</div><div class="line"></div><div class="line">       &lt;!--spring 包--&gt;</div><div class="line">       &lt;dependency&gt;</div><div class="line">           &lt;groupId&gt;org.springframework&lt;/groupId&gt;</div><div class="line">           &lt;artifactId&gt;spring-webmvc&lt;/artifactId&gt;</div><div class="line">           &lt;version&gt;$&#123;spring.version&#125;&lt;/version&gt;</div><div class="line">       &lt;/dependency&gt;</div><div class="line">   &lt;/dependencies&gt;</div><div class="line"></div><div class="line"></div><div class="line">   &lt;build&gt;</div><div class="line">       &lt;finalName&gt;ssm&lt;/finalName&gt;</div><div class="line">   &lt;/build&gt;</div><div class="line">&lt;/project&gt;</div></pre></td></tr></table></figure></p><p>   第一次需要去下jar包，所有会有点慢。。。<br>   2.2修改web.xml<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE web-app PUBLIC</div><div class="line">        &quot;-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN&quot;</div><div class="line">        &quot;http://java.sun.com/dtd/web-app_2_3.dtd&quot; &gt;</div><div class="line"></div><div class="line">&lt;web-app&gt;</div><div class="line">    &lt;display-name&gt;Archetype Created Web Application&lt;/display-name&gt;</div><div class="line">    &lt;!-- 加载Srping配置文件 --&gt;</div><div class="line">    &lt;context-param&gt;</div><div class="line">        &lt;param-name&gt;contextConfigLocation&lt;/param-name&gt;</div><div class="line">        &lt;param-value&gt;classpath:/spring/applicationContext.xml&lt;/param-value&gt;</div><div class="line">    &lt;/context-param&gt;</div><div class="line">    &lt;!-- Spring 监听 --&gt;</div><div class="line">    &lt;listener&gt;</div><div class="line">        &lt;listener-class&gt;org.springframework.web.context.ContextLoaderListener&lt;/listener-class&gt;</div><div class="line">    &lt;/listener&gt;</div><div class="line">    &lt;!-- SpringMVC配置 --&gt;</div><div class="line">    &lt;servlet&gt;</div><div class="line">        &lt;servlet-name&gt;spring mvc&lt;/servlet-name&gt;</div><div class="line">        &lt;servlet-class&gt;org.springframework.web.servlet.DispatcherServlet&lt;/servlet-class&gt;</div><div class="line">        &lt;!-- 自定义spring mvc的配置文件名称和路径 --&gt;</div><div class="line">        &lt;init-param&gt;</div><div class="line">            &lt;param-name&gt;contextConfigLocation&lt;/param-name&gt;</div><div class="line">            &lt;param-value&gt;classpath:/springmvc/spring-mvc-servlet.xml&lt;/param-value&gt;</div><div class="line">        &lt;/init-param&gt;</div><div class="line">    &lt;/servlet&gt;</div><div class="line">    &lt;!-- spring mvc 请求后缀 --&gt;</div><div class="line">    &lt;servlet-mapping&gt;</div><div class="line">        &lt;servlet-name&gt;spring mvc&lt;/servlet-name&gt;</div><div class="line">        &lt;url-pattern&gt;/&lt;/url-pattern&gt;</div><div class="line">    &lt;/servlet-mapping&gt;</div><div class="line"></div><div class="line">    &lt;welcome-file-list&gt;</div><div class="line">        &lt;welcome-file&gt;index.jsp&lt;/welcome-file&gt;</div><div class="line">    &lt;/welcome-file-list&gt;</div><div class="line">&lt;/web-app&gt;</div></pre></td></tr></table></figure></p><p>   2.3建以下目录结构<br>   <img src="https://i.imgur.com/sl7Nvwq.png" alt=""><br>   2.3修改spring-mvc-servlet.xml<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</div><div class="line">&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;</div><div class="line">       xmlns:mvc=&quot;http://www.springframework.org/schema/mvc&quot;</div><div class="line">       xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</div><div class="line">       xmlns:context=&quot;http://www.springframework.org/schema/context&quot;</div><div class="line">       xsi:schemaLocation=&quot;http://www.springframework.org/schema/beans</div><div class="line">      http://www.springframework.org/schema/beans/spring-beans-4.2.xsd</div><div class="line">      http://www.springframework.org/schema/mvc</div><div class="line">      http://www.springframework.org/schema/mvc/spring-mvc-4.2.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd&quot;&gt;</div><div class="line"></div><div class="line">    &lt;!-- 激活@Controller模式 --&gt;</div><div class="line">    &lt;mvc:annotation-driven/&gt;</div><div class="line">    &lt;!-- 对包中的所有类进行扫描，以完成Bean创建和自动依赖注入的功能  --&gt;</div><div class="line">    &lt;context:component-scan base-package=&quot;com.cookChen.controller&quot;/&gt;</div><div class="line"></div><div class="line">    &lt;!-- 定义跳转的文件的前后缀 ，视图模式配置--&gt;</div><div class="line">    &lt;bean class=&quot;org.springframework.web.servlet.view.InternalResourceViewResolver&quot;&gt;</div><div class="line">        &lt;property name=&quot;prefix&quot; value=&quot;/WEB-INF/jsp/&quot; /&gt;</div><div class="line">        &lt;property name=&quot;suffix&quot; value=&quot;.jsp&quot; /&gt;</div><div class="line">    &lt;/bean&gt;</div><div class="line"></div><div class="line">&lt;/beans&gt;</div></pre></td></tr></table></figure></p><p>   2.4修改applicationContext.xml<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</div><div class="line">&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;</div><div class="line">       xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</div><div class="line">       xsi:schemaLocation=&quot;</div><div class="line">            http://www.springframework.org/schema/beans</div><div class="line">            http://www.springframework.org/schema/beans/spring-beans-4.0.xsd&quot;&gt;</div><div class="line"></div><div class="line"></div><div class="line">&lt;/beans&gt;</div></pre></td></tr></table></figure></p><p>  2.5在WEB-INF/jsp下新建pageOne.jsp文件<br>  <img src="https://i.imgur.com/VOsh499.png" alt=""><br>  2.6修改index.jsp中的内容<br>  <img src="https://i.imgur.com/sFyFGhk.png" alt=""><br>  2.7新建控制层代码<br>  <img src="https://i.imgur.com/dEILGor.png" alt=""><br>  2.8部署项目到tomcat，然后run或者debug，看到如下效果<br>  <img src="https://i.imgur.com/UsRiCK0.png" alt=""><br>  点击go to page one ，跳转到pageone页面<br>  <img src="https://i.imgur.com/3wW12Kk.png" alt=""><br> 以上就是本次的全部内容，下一章会加入spring。。。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;1-前言&quot;&gt;&lt;a href=&quot;#1-前言&quot; class=&quot;headerlink&quot; title=&quot;1.前言&quot;&gt;&lt;/a&gt;1.前言&lt;/h2&gt;&lt;p&gt;  1.1博主也是一名正在学习的coder，本博客是在学习他人优秀的博客后加上自己的一点总结，有什么问题可以留言我们相互讨论，博主会不定期回复&lt;br&gt;  1.2本系列是面向初级开发者，主要是搭建起一套目前流行的java框架&lt;br&gt;  1.3&lt;a href=&quot;https://coderChensl.github.io/2017/09/15/ssm2/&quot;&gt;上节&lt;/a&gt;已经讲解maven项目的搭建，接下来加入spring mvc&lt;br&gt;
+    
+    </summary>
+    
+      <category term="干货系列" scheme="https://coderChensl.github.io/categories/%E5%B9%B2%E8%B4%A7%E7%B3%BB%E5%88%97/"/>
+    
+    
+      <category term="java框架、maven、spring mvc" scheme="https://coderChensl.github.io/tags/java%E6%A1%86%E6%9E%B6%E3%80%81maven%E3%80%81spring-mvc/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>干货系列1.2--spring+springmvc+mybatis+maven之idea搭建maven项目结构</title>
+    <link href="https://coderChensl.github.io/2017/09/15/ssm2/"/>
+    <id>https://coderChensl.github.io/2017/09/15/ssm2/</id>
+    <published>2017-09-15T03:50:26.000Z</published>
+    <updated>2017-09-15T09:31:25.011Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="1-前言"><a href="#1-前言" class="headerlink" title="1.前言"></a>1.前言</h2><p>  1.1博主也是一名正在学习的coder，本博客是在学习他人优秀的博客后加上自己的一点总结，有什么问题可以留言我们相互讨论，博主会不定期回复<br>  1.2本系列是面向初级开发者，主要是搭建起一套目前流行的java框架<br>  1.3<a href="https://coderChensl.github.io/2017/09/15/ssm1/">上节</a>已经讲解maven的环境配置，本节将介绍用idea搭建maven项目结构<br><a id="more"></a></p><h2 id="2-搭建maven项目结构"><a href="#2-搭建maven项目结构" class="headerlink" title="2.搭建maven项目结构"></a>2.搭建maven项目结构</h2><p>  2.1打开IDEA，依次打开File&gt;&gt;Project，找到Maven<br>  <img src="https://i.imgur.com/N7JgwMY.png" alt=""><br>  2.2勾选Create from archetype,找到org.apache.maven.archetypes:maven-archetype-webapp,点击Next<br>  <img src="https://i.imgur.com/a7EbJy4.png" alt=""><br>  2.3按照规范填入GroupId,ArtifactId<br>  <img src="https://i.imgur.com/vDddNw8.png" alt=""><br>  2.4配置maven路径<br>  <img src="https://i.imgur.com/LDINwmw.png" alt=""><br>  2.5填入Project name<br>  <img src="https://i.imgur.com/fyAfVo2.png" alt=""><br>  2.6点击Finish完成项目的创建<br>  <img src="https://i.imgur.com/I4rjgYM.png" alt=""><br>  2.7完善目录结构<br>  <img src="https://i.imgur.com/XGpEigM.png" alt=""></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;1-前言&quot;&gt;&lt;a href=&quot;#1-前言&quot; class=&quot;headerlink&quot; title=&quot;1.前言&quot;&gt;&lt;/a&gt;1.前言&lt;/h2&gt;&lt;p&gt;  1.1博主也是一名正在学习的coder，本博客是在学习他人优秀的博客后加上自己的一点总结，有什么问题可以留言我们相互讨论，博主会不定期回复&lt;br&gt;  1.2本系列是面向初级开发者，主要是搭建起一套目前流行的java框架&lt;br&gt;  1.3&lt;a href=&quot;https://coderChensl.github.io/2017/09/15/ssm1/&quot;&gt;上节&lt;/a&gt;已经讲解maven的环境配置，本节将介绍用idea搭建maven项目结构&lt;br&gt;
+    
+    </summary>
+    
+      <category term="干货系列" scheme="https://coderChensl.github.io/categories/%E5%B9%B2%E8%B4%A7%E7%B3%BB%E5%88%97/"/>
+    
+    
+      <category term="java框架、maven" scheme="https://coderChensl.github.io/tags/java%E6%A1%86%E6%9E%B6%E3%80%81maven/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>干货系列1.1--spring+springmvc+mybatis+maven之maven环境配置</title>
+    <link href="https://coderChensl.github.io/2017/09/15/ssm1/"/>
+    <id>https://coderChensl.github.io/2017/09/15/ssm1/</id>
+    <published>2017-09-15T02:15:48.000Z</published>
+    <updated>2017-09-15T03:47:21.125Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="1-前言"><a href="#1-前言" class="headerlink" title="1.前言"></a>1.前言</h2><p>  1.1博主也是一名正在学习的coder，本博客是在学习他人优秀的博客后加上自己的一点总结，有什么问题可以留言我们相互讨论，博主会不定期回复<br>  1.2本系列是面向初级开发者，主要是搭建起一套目前流行的java框架<br><a id="more"></a></p><h2 id="2-maven的作用"><a href="#2-maven的作用" class="headerlink" title="2.maven的作用"></a>2.maven的作用</h2><p>  2.1省去开发过程中手动去找jar包的麻烦<br>  2.2统一开发规范与工具，统一管理jar包</p><h2 id="3-环境配置"><a href="#3-环境配置" class="headerlink" title="3.环境配置"></a>3.环境配置</h2><p>  3.1在安装配置前，确保已有jdk环境<br>  3.2到<a href="http://maven.apache.org/download.cgi" target="_blank" rel="external">官网下载</a>maven,如图所示<img src="https://i.imgur.com/G3moheY.png" alt=""><br>  3.3下载完成后，解压到你想要的目录里面，然后配置环境变量，和JDK的环境变量配置类似<br>  <img src="https://i.imgur.com/S2PxhVG.png" alt=""><br>  <img src="https://i.imgur.com/ctWf1ze.png" alt=""><br>  <img src="https://i.imgur.com/UJ1N4j4.png" alt=""><br>  3.4配置完成后，Windows+R输入cmd打开命令窗口，输入mvn -v,如果有下面的内容就表示配置成功<br>  <img src="https://i.imgur.com/dOetg0x.png" alt=""><br>  3.5maven的默认仓库是在 C:\Users\Administrator.m2\repository 目录下，防止占C盘的内存以及系统挂了以后又要重新下载，我们把本地仓库修改成我们自己的路径，在D盘新建文件夹maven_repository，然后找到你放maven的目录，打开D:\apache-maven-3.5.0\conf\settings.xml文件，修改相应的路径<br>  <img src="https://i.imgur.com/bkNWH1Q.png" alt=""></p><h2 id="4-IDEA集成maven"><a href="#4-IDEA集成maven" class="headerlink" title="4.IDEA集成maven"></a>4.IDEA集成maven</h2><p>  4.1打开IDEA软件，点击File,选择settings,搜索maven,如下图<br>  <img src="https://i.imgur.com/azcFJ9J.png" alt=""><br>  4.2修改Maven home directory:的路径为自己的maven路径，User settings files为自己的settings.xml文件，勾选Override，如图所示<br>  <img src="https://i.imgur.com/wjLaIfR.png" alt=""><br>以上就是maven的环境配置，希望可以帮到您，谢谢！</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;1-前言&quot;&gt;&lt;a href=&quot;#1-前言&quot; class=&quot;headerlink&quot; title=&quot;1.前言&quot;&gt;&lt;/a&gt;1.前言&lt;/h2&gt;&lt;p&gt;  1.1博主也是一名正在学习的coder，本博客是在学习他人优秀的博客后加上自己的一点总结，有什么问题可以留言我们相互讨论，博主会不定期回复&lt;br&gt;  1.2本系列是面向初级开发者，主要是搭建起一套目前流行的java框架&lt;br&gt;
+    
+    </summary>
+    
+      <category term="干货系列" scheme="https://coderChensl.github.io/categories/%E5%B9%B2%E8%B4%A7%E7%B3%BB%E5%88%97/"/>
+    
+    
+      <category term="java框架、maven" scheme="https://coderChensl.github.io/tags/java%E6%A1%86%E6%9E%B6%E3%80%81maven/"/>
+    
+  </entry>
   
   <entry>
     <title>IDE使用技巧</title>
@@ -35,26 +101,6 @@
     
     
       <category term="eclipse、IDEA、HBuilder" scheme="https://coderChensl.github.io/tags/eclipse%E3%80%81IDEA%E3%80%81HBuilder/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>解决前后端分离跨域问题</title>
-    <link href="https://coderChensl.github.io/2017/09/14/%E8%A7%A3%E5%86%B3%E5%89%8D%E5%90%8E%E7%AB%AF%E5%88%86%E7%A6%BB%E8%B7%A8%E5%9F%9F%E9%97%AE%E9%A2%98/"/>
-    <id>https://coderChensl.github.io/2017/09/14/解决前后端分离跨域问题/</id>
-    <published>2017-09-14T02:25:08.000Z</published>
-    <updated>2017-09-14T09:49:00.373Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>最近公司尝试前后端分离，正好遇到跨域问题，便把解决方案写出来分享一下，希望可以帮到各位！！！<br><a id="more"></a></p><h2 id="什么是跨域？"><a href="#什么是跨域？" class="headerlink" title="什么是跨域？"></a>什么是跨域？</h2><h3 id="1-概念"><a href="#1-概念" class="headerlink" title="1.概念"></a>1.概念</h3><p>只要协议、域名、端口有任何一个不同，都被当作是不同的域。</p><h3 id="2-举例"><a href="#2-举例" class="headerlink" title="2.举例"></a>2.举例</h3><table><thead><tr><th>URL1</th><th>URL2</th><th>说明</th><th>是否允许通信</th></tr></thead><tbody><tr><td><a href="http://www.a.com/a.js" target="_blank" rel="external">http://www.a.com/a.js</a></td><td><a href="http://www.a.com/b.js" target="_blank" rel="external">http://www.a.com/b.js</a></td><td>同一域名</td><td>允许</td></tr><tr><td><a href="http://www.a.com/lab/a.js" target="_blank" rel="external">http://www.a.com/lab/a.js</a></td><td><a href="http://www.a.com/script/b.js" target="_blank" rel="external">http://www.a.com/script/b.js</a></td><td>同一域名下不同文件夹</td><td>允许</td></tr><tr><td><a href="http://www.a.com:8088/a.js" target="_blank" rel="external">http://www.a.com:8088/a.js</a></td><td><a href="http://www.a.com/b.js" target="_blank" rel="external">http://www.a.com/b.js</a></td><td>同一域名不同端口</td><td>不允许</td></tr><tr><td><a href="https://www.a.com/a.js" target="_blank" rel="external">https://www.a.com/a.js</a></td><td><a href="http://www.a.com/b.js" target="_blank" rel="external">http://www.a.com/b.js</a></td><td>不同协议的同一域名</td><td>不允许</td></tr></tbody></table>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;最近公司尝试前后端分离，正好遇到跨域问题，便把解决方案写出来分享一下，希望可以帮到各位！！！&lt;br&gt;
-    
-    </summary>
-    
-      <category term="java" scheme="https://coderChensl.github.io/categories/java/"/>
-    
     
   </entry>
   
