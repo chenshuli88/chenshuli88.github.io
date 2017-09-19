@@ -1,0 +1,1099 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="java框架、maven、spring mvc、spring、mybatis," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="陈伙夫的博客" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/background.jpg?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="1.前言  1.1上节已经将ssm框架搭好，这节将使用mybatis-generator生成代码">
+<meta name="keywords" content="java框架、maven、spring mvc、spring、mybatis">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用mybatis-generator工具创建mybatis相关代码">
+<meta property="og:url" content="https://coderChensl.github.io/2017/09/18/ssm6/index.html">
+<meta property="og:site_name" content="陈伙夫的博客">
+<meta property="og:description" content="1.前言  1.1上节已经将ssm框架搭好，这节将使用mybatis-generator生成代码">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://i.imgur.com/b5n17O7.png">
+<meta property="og:image" content="https://i.imgur.com/lHb6n8V.png">
+<meta property="og:image" content="https://i.imgur.com/z6AWaPt.png">
+<meta property="og:image" content="https://i.imgur.com/36rfB0h.png">
+<meta property="og:image" content="https://i.imgur.com/qik3gM5.png">
+<meta property="og:image" content="https://i.imgur.com/SFhyaOz.png">
+<meta property="og:image" content="https://i.imgur.com/48PkZ6L.png">
+<meta property="og:image" content="https://i.imgur.com/Xb7DREI.png">
+<meta property="og:image" content="https://i.imgur.com/AwH8SQ7.png">
+<meta property="og:image" content="https://i.imgur.com/ERcVoXv.png">
+<meta property="og:image" content="https://i.imgur.com/DXbFMtZ.png">
+<meta property="og:image" content="https://i.imgur.com/BFmJ50A.png">
+<meta property="og:image" content="https://i.imgur.com/73XIEW4.png">
+<meta property="og:updated_time" content="2017-09-19T01:40:54.267Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="使用mybatis-generator工具创建mybatis相关代码">
+<meta name="twitter:description" content="1.前言  1.1上节已经将ssm框架搭好，这节将使用mybatis-generator生成代码">
+<meta name="twitter:image" content="https://i.imgur.com/b5n17O7.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://coderChensl.github.io/2017/09/18/ssm6/"/>
+
+
+
+
+
+  <title>使用mybatis-generator工具创建mybatis相关代码 | 陈伙夫的博客</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">陈伙夫的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">编码源于生活</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://coderChensl.github.io/2017/09/18/ssm6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="CookChen">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="陈伙夫的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">使用mybatis-generator工具创建mybatis相关代码</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-18T15:06:36+08:00">
+                2017-09-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/干货系列/" itemprop="url" rel="index">
+                    <span itemprop="name">干货系列</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/09/18/ssm6/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/09/18/ssm6/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2017/09/18/ssm6/" class="leancloud_visitors" data-flag-title="使用mybatis-generator工具创建mybatis相关代码">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="1-前言"><a href="#1-前言" class="headerlink" title="1.前言"></a>1.前言</h2><p>  1.1<a href="https://coderChensl.github.io/2017/09/18/ssm5/">上节</a>已经将ssm框架搭好，这节将使用mybatis-generator生成代码<br><a id="more"></a></p>
+<h2 id="2-创建数据库"><a href="#2-创建数据库" class="headerlink" title="2.创建数据库"></a>2.创建数据库</h2><p>  2.1执行创表语句<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">SET FOREIGN_KEY_CHECKS=0;</div><div class="line"></div><div class="line">-- ----------------------------</div><div class="line">-- Table structure for t_user_info</div><div class="line">-- ----------------------------</div><div class="line">DROP TABLE IF EXISTS `t_user_info`;</div><div class="line">CREATE TABLE `t_user_info` (</div><div class="line">  `id` int(11) NOT NULL AUTO_INCREMENT,</div><div class="line">  `user_name` varchar(255) DEFAULT NULL COMMENT &apos;用户名&apos;,</div><div class="line">  `nick_name` varchar(255) DEFAULT NULL COMMENT &apos;昵称&apos;,</div><div class="line">  `age` int(11) DEFAULT NULL COMMENT &apos;年龄&apos;,</div><div class="line">  PRIMARY KEY (`id`)</div><div class="line">) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COMMENT=&apos;用户表&apos;;</div><div class="line"></div><div class="line">-- ----------------------------</div><div class="line">-- Records of t_user_info</div><div class="line">-- ----------------------------</div><div class="line">INSERT INTO `t_user_info` VALUES (&apos;1&apos;, &apos;test&apos;, &apos;test&apos;, &apos;21&apos;);</div><div class="line">INSERT INTO `t_user_info` VALUES (&apos;2&apos;, &apos;cookChen&apos;, &apos;cookChen&apos;, &apos;24&apos;);</div><div class="line">INSERT INTO `t_user_info` VALUES (&apos;3&apos;, &apos;xiaoMing&apos;, &apos;小明&apos;, &apos;18&apos;);</div></pre></td></tr></table></figure></p>
+<p>建表完之后如图所示<br><img src="https://i.imgur.com/b5n17O7.png" alt=""></p>
+<h2 id="3-配置mybatis-generator插件"><a href="#3-配置mybatis-generator插件" class="headerlink" title="3.配置mybatis-generator插件"></a>3.配置mybatis-generator插件</h2><p>  3.1修改pom.xml文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div></pre></td><td class="code"><pre><div class="line">&lt;project xmlns=&quot;http://maven.apache.org/POM/4.0.0&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</div><div class="line">         xsi:schemaLocation=&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd&quot;&gt;</div><div class="line">    &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;</div><div class="line">    &lt;groupId&gt;com.tmg.cookChen&lt;/groupId&gt;</div><div class="line">    &lt;artifactId&gt;ssm&lt;/artifactId&gt;</div><div class="line">    &lt;packaging&gt;war&lt;/packaging&gt;</div><div class="line">    &lt;version&gt;1.0-SNAPSHOT&lt;/version&gt;</div><div class="line">    &lt;name&gt;ssm Maven Webapp&lt;/name&gt;</div><div class="line">    &lt;url&gt;http://maven.apache.org&lt;/url&gt;</div><div class="line"></div><div class="line">    &lt;!--   声明版本 --&gt;</div><div class="line">    &lt;properties&gt;</div><div class="line">        &lt;spring.version&gt;4.3.6.RELEASE&lt;/spring.version&gt;</div><div class="line">        &lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt;</div><div class="line">    &lt;/properties&gt;</div><div class="line"></div><div class="line">    &lt;dependencies&gt;</div><div class="line">        &lt;!--测试包--&gt;</div><div class="line">        &lt;dependency&gt;</div><div class="line">            &lt;groupId&gt;junit&lt;/groupId&gt;</div><div class="line">            &lt;artifactId&gt;junit&lt;/artifactId&gt;</div><div class="line">            &lt;version&gt;3.8.1&lt;/version&gt;</div><div class="line">            &lt;scope&gt;test&lt;/scope&gt;</div><div class="line">        &lt;/dependency&gt;</div><div class="line"></div><div class="line">        &lt;!--spring 包--&gt;</div><div class="line">        &lt;dependency&gt;</div><div class="line">            &lt;groupId&gt;org.springframework&lt;/groupId&gt;</div><div class="line">            &lt;artifactId&gt;spring-webmvc&lt;/artifactId&gt;</div><div class="line">            &lt;version&gt;$&#123;spring.version&#125;&lt;/version&gt;</div><div class="line">        &lt;/dependency&gt;</div><div class="line">        &lt;!-- spring 包 事务 --&gt;</div><div class="line">        &lt;dependency&gt;</div><div class="line">            &lt;groupId&gt;org.springframework&lt;/groupId&gt;</div><div class="line">            &lt;artifactId&gt;spring-tx&lt;/artifactId&gt;</div><div class="line">            &lt;version&gt;$&#123;spring.version&#125;&lt;/version&gt;</div><div class="line">        &lt;/dependency&gt;</div><div class="line">        &lt;dependency&gt;</div><div class="line">            &lt;groupId&gt;org.springframework&lt;/groupId&gt;</div><div class="line">            &lt;artifactId&gt;spring-jdbc&lt;/artifactId&gt;</div><div class="line">            &lt;version&gt;$&#123;spring.version&#125;&lt;/version&gt;</div><div class="line">        &lt;/dependency&gt;</div><div class="line">        &lt;dependency&gt;</div><div class="line">            &lt;groupId&gt;org.springframework&lt;/groupId&gt;</div><div class="line">            &lt;artifactId&gt;spring-web&lt;/artifactId&gt;</div><div class="line">            &lt;version&gt;$&#123;spring.version&#125;&lt;/version&gt;</div><div class="line">        &lt;/dependency&gt;</div><div class="line">        &lt;dependency&gt;</div><div class="line">            &lt;groupId&gt;org.springframework&lt;/groupId&gt;</div><div class="line">            &lt;artifactId&gt;spring-aspects&lt;/artifactId&gt;</div><div class="line">            &lt;version&gt;$&#123;spring.version&#125;&lt;/version&gt;</div><div class="line">        &lt;/dependency&gt;</div><div class="line">        &lt;dependency&gt;</div><div class="line">            &lt;groupId&gt;org.springframework&lt;/groupId&gt;</div><div class="line">            &lt;artifactId&gt;spring-context-support&lt;/artifactId&gt;</div><div class="line">            &lt;version&gt;$&#123;spring.version&#125;&lt;/version&gt;</div><div class="line">        &lt;/dependency&gt;</div><div class="line">        &lt;dependency&gt;</div><div class="line">            &lt;groupId&gt;org.springframework&lt;/groupId&gt;</div><div class="line">            &lt;artifactId&gt;spring-orm&lt;/artifactId&gt;</div><div class="line">            &lt;version&gt;4.1.4.RELEASE&lt;/version&gt;</div><div class="line">        &lt;/dependency&gt;</div><div class="line"></div><div class="line">        &lt;!-- mybatis 包 --&gt;</div><div class="line">        &lt;dependency&gt;</div><div class="line">            &lt;groupId&gt;org.mybatis&lt;/groupId&gt;</div><div class="line">            &lt;artifactId&gt;mybatis&lt;/artifactId&gt;</div><div class="line">            &lt;version&gt;3.2.8&lt;/version&gt;</div><div class="line">        &lt;/dependency&gt;</div><div class="line"></div><div class="line">        &lt;!--mybatis spring 插件 --&gt;</div><div class="line">        &lt;dependency&gt;</div><div class="line">            &lt;groupId&gt;org.mybatis&lt;/groupId&gt;</div><div class="line">            &lt;artifactId&gt;mybatis-spring&lt;/artifactId&gt;</div><div class="line">            &lt;version&gt;1.2.2&lt;/version&gt;</div><div class="line">        &lt;/dependency&gt;</div><div class="line">        &lt;!-- mysql驱动包 --&gt;</div><div class="line"></div><div class="line">        &lt;dependency&gt;</div><div class="line">            &lt;groupId&gt;mysql&lt;/groupId&gt;</div><div class="line">            &lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt;</div><div class="line">            &lt;version&gt;5.1.39&lt;/version&gt;</div><div class="line">        &lt;/dependency&gt;</div><div class="line"></div><div class="line">        &lt;!--链接池  --&gt;</div><div class="line">        &lt;dependency&gt;</div><div class="line">            &lt;groupId&gt;com.alibaba&lt;/groupId&gt;</div><div class="line">            &lt;artifactId&gt;druid&lt;/artifactId&gt;</div><div class="line">            &lt;version&gt;1.0.29&lt;/version&gt;</div><div class="line">        &lt;/dependency&gt;</div><div class="line"></div><div class="line">        &lt;!-- log4j --&gt;</div><div class="line">        &lt;dependency&gt;</div><div class="line">            &lt;groupId&gt;log4j&lt;/groupId&gt;</div><div class="line">            &lt;artifactId&gt;log4j&lt;/artifactId&gt;</div><div class="line">            &lt;version&gt;1.2.17&lt;/version&gt;</div><div class="line">        &lt;/dependency&gt;</div><div class="line">        &lt;dependency&gt;</div><div class="line">            &lt;groupId&gt;org.slf4j&lt;/groupId&gt;</div><div class="line">            &lt;artifactId&gt;slf4j-log4j12&lt;/artifactId&gt;</div><div class="line">            &lt;version&gt;1.7.21&lt;/version&gt;</div><div class="line">        &lt;/dependency&gt;</div><div class="line">        &lt;dependency&gt;</div><div class="line">            &lt;groupId&gt;org.slf4j&lt;/groupId&gt;</div><div class="line">            &lt;artifactId&gt;slf4j-api&lt;/artifactId&gt;</div><div class="line">            &lt;version&gt;1.7.21&lt;/version&gt;</div><div class="line">        &lt;/dependency&gt;</div><div class="line">        &lt;!-- jstl --&gt;</div><div class="line">        &lt;dependency&gt;</div><div class="line">            &lt;groupId&gt;javax.servlet&lt;/groupId&gt;</div><div class="line">            &lt;artifactId&gt;jstl&lt;/artifactId&gt;</div><div class="line">            &lt;version&gt;1.2&lt;/version&gt;</div><div class="line">        &lt;/dependency&gt;</div><div class="line">    &lt;/dependencies&gt;</div><div class="line"></div><div class="line">    &lt;build&gt;</div><div class="line">        &lt;finalName&gt;ssm&lt;/finalName&gt;</div><div class="line">        &lt;pluginManagement&gt;</div><div class="line">            &lt;plugins&gt;</div><div class="line">                &lt;plugin&gt;</div><div class="line">                    &lt;groupId&gt;org.mybatis.generator&lt;/groupId&gt;</div><div class="line">                    &lt;artifactId&gt;mybatis-generator-maven-plugin&lt;/artifactId&gt;</div><div class="line">                    &lt;version&gt;1.3.2&lt;/version&gt;</div><div class="line">                    &lt;dependencies&gt;</div><div class="line">                        &lt;dependency&gt;</div><div class="line">                            &lt;groupId&gt;mysql&lt;/groupId&gt;</div><div class="line">                            &lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt;</div><div class="line">                            &lt;version&gt;5.1.39&lt;/version&gt;</div><div class="line">                        &lt;/dependency&gt;</div><div class="line">                    &lt;/dependencies&gt;</div><div class="line">                    &lt;configuration&gt;</div><div class="line">                        &lt;!--配置文件的路径--&gt;</div><div class="line">                        &lt;configurationFile&gt;$&#123;basedir&#125;/src/main/resources/mybatis/generatorConfig.xml&lt;/configurationFile&gt;</div><div class="line">                        &lt;overwrite&gt;true&lt;/overwrite&gt;</div><div class="line">                    &lt;/configuration&gt;</div><div class="line">                &lt;/plugin&gt;</div><div class="line">            &lt;/plugins&gt;</div><div class="line">        &lt;/pluginManagement&gt;</div><div class="line">    &lt;/build&gt;</div><div class="line">&lt;/project&gt;</div></pre></td></tr></table></figure></p>
+<p>  3.2创建generatorConfig.xml文件<br>  <img src="https://i.imgur.com/lHb6n8V.png" alt=""><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</div><div class="line">&lt;!DOCTYPE generatorConfiguration</div><div class="line">        PUBLIC &quot;-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN&quot;</div><div class="line">        &quot;http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd&quot;&gt;</div><div class="line">&lt;generatorConfiguration&gt;</div><div class="line">    &lt;context id=&quot;test&quot; targetRuntime=&quot;MyBatis3&quot;&gt;</div><div class="line">        &lt;plugin type=&quot;org.mybatis.generator.plugins.EqualsHashCodePlugin&quot;&gt;&lt;/plugin&gt;</div><div class="line">        &lt;plugin type=&quot;org.mybatis.generator.plugins.SerializablePlugin&quot;&gt;&lt;/plugin&gt;</div><div class="line">        &lt;plugin type=&quot;org.mybatis.generator.plugins.ToStringPlugin&quot;&gt;&lt;/plugin&gt;</div><div class="line">        &lt;commentGenerator&gt;</div><div class="line">            &lt;!-- 这个元素用来去除指定生成的注释中是否包含生成的日期 false:表示保护 --&gt;</div><div class="line">            &lt;!-- 如果生成日期，会造成即使修改一个字段，整个实体类所有属性都会发生变化，不利于版本控制，所以设置为true --&gt;</div><div class="line">            &lt;property name=&quot;suppressDate&quot; value=&quot;true&quot; /&gt;</div><div class="line">            &lt;!-- 是否去除自动生成的注释 true：是 ： false:否 --&gt;</div><div class="line">            &lt;property name=&quot;suppressAllComments&quot; value=&quot;false&quot; /&gt;</div><div class="line">        &lt;/commentGenerator&gt;</div><div class="line">        &lt;!--数据库链接URL，用户名、密码 --&gt;</div><div class="line">        &lt;jdbcConnection driverClass=&quot;com.mysql.jdbc.Driver&quot;</div><div class="line">                        connectionURL=&quot;jdbc:mysql://localhost:3306/testbycookchen?useUnicode=true&amp;amp;characterEncoding=UTF-8&quot; userId=&quot;root&quot; password=&quot;root&quot;&gt;</div><div class="line">        &lt;/jdbcConnection&gt;</div><div class="line">        &lt;javaTypeResolver&gt;</div><div class="line">            &lt;!-- This property is used to specify whether MyBatis Generator should</div><div class="line">                force the use of java.math.BigDecimal for DECIMAL and NUMERIC fields, --&gt;</div><div class="line">            &lt;property name=&quot;forceBigDecimals&quot; value=&quot;false&quot; /&gt;</div><div class="line">        &lt;/javaTypeResolver&gt;</div><div class="line">        &lt;!-- 生成模型的包名和位置 --&gt;</div><div class="line">        &lt;javaModelGenerator targetPackage=&quot;com.cookChen.model&quot;</div><div class="line">                            targetProject=&quot;target&quot;&gt;</div><div class="line">            &lt;property name=&quot;enableSubPackages&quot; value=&quot;true&quot; /&gt;</div><div class="line">            &lt;property name=&quot;trimStrings&quot; value=&quot;true&quot; /&gt;</div><div class="line">        &lt;/javaModelGenerator&gt;</div><div class="line">        &lt;!-- 生成映射文件的包名和位置 --&gt;</div><div class="line">        &lt;sqlMapGenerator targetPackage=&quot;com.test.mapping&quot;</div><div class="line">                         targetProject=&quot;target&quot;&gt;</div><div class="line">            &lt;property name=&quot;enableSubPackages&quot; value=&quot;true&quot; /&gt;</div><div class="line">        &lt;/sqlMapGenerator&gt;</div><div class="line">        &lt;!-- 生成DAO的包名和位置 --&gt;</div><div class="line">        &lt;javaClientGenerator type=&quot;XMLMAPPER&quot;</div><div class="line">                             targetPackage=&quot;com.cookChen.dao&quot; implementationPackage=&quot;com.cookChen.dao.impl&quot;  targetProject=&quot;target&quot;&gt;</div><div class="line">            &lt;property name=&quot;enableSubPackages&quot; value=&quot;true&quot; /&gt;</div><div class="line">        &lt;/javaClientGenerator&gt;</div><div class="line"></div><div class="line">        &lt;!-- 要生成哪些表 --&gt;</div><div class="line">        &lt;table tableName=&quot;t_user_info&quot; domainObjectName=&quot;UserInfo&quot;</div><div class="line">               enableCountByExample=&quot;false&quot; enableUpdateByExample=&quot;false&quot;</div><div class="line">               enableDeleteByExample=&quot;false&quot; enableSelectByExample=&quot;false&quot;</div><div class="line">               selectByExampleQueryId=&quot;false&quot;&gt;&lt;/table&gt;</div><div class="line">    &lt;/context&gt;</div><div class="line">&lt;/generatorConfiguration&gt;</div></pre></td></tr></table></figure></p>
+<p>  3.3用maven插件生成代码<br>  如图所示，点击IDEA右侧maven窗口<br>  <img src="https://i.imgur.com/z6AWaPt.png" alt=""><br>  点击Exectue maven Goal<br>  <img src="https://i.imgur.com/36rfB0h.png" alt=""><br>  输入”mybatis-generator:generate”<br>  <img src="https://i.imgur.com/qik3gM5.png" alt=""><br>  执行完之后<br>  <img src="https://i.imgur.com/SFhyaOz.png" alt=""><br>  然后在该路径找到代码<br>  <img src="https://i.imgur.com/48PkZ6L.png" alt=""><br>  拷贝UserInfoMapper.java到src/main/java/com/cookChen/dao下，并重命名为UserInfoDao<br>  <img src="https://i.imgur.com/Xb7DREI.png" alt=""><br>  拷贝UserInfo.java到src/main/java/com/cookChen/model下<br>  <img src="https://i.imgur.com/AwH8SQ7.png" alt=""><br>  拷贝UserInfoMapper.xml到resources/mapper下，并重命名为t_user_info_SalMap.xml<br>  <img src="https://i.imgur.com/ERcVoXv.png" alt=""><br>  3.4在controller下新增UserInfoController控制层代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line">package com.cookChen.controller;</div><div class="line"></div><div class="line">import com.cookChen.model.UserInfo;</div><div class="line">import com.cookChen.service.UserInfoService;</div><div class="line">import org.springframework.beans.factory.annotation.Autowired;</div><div class="line">import org.springframework.stereotype.Controller;</div><div class="line">import org.springframework.ui.ModelMap;</div><div class="line">import org.springframework.web.bind.annotation.RequestMapping;</div><div class="line">import org.springframework.web.bind.annotation.RequestParam;</div><div class="line"></div><div class="line"></div><div class="line">@Controller</div><div class="line">@RequestMapping(&quot;/user&quot;)</div><div class="line">public class UserInfoController &#123;</div><div class="line"></div><div class="line">    @Autowired</div><div class="line">    private UserInfoService userInfoService;</div><div class="line"></div><div class="line"></div><div class="line">    /**</div><div class="line">     * 根据用户Id查询名字</div><div class="line">     * @param modelMap</div><div class="line">     * @param id</div><div class="line">     * @return</div><div class="line">     */</div><div class="line">    @RequestMapping(&quot;/showName&quot;)</div><div class="line">    public String showUserInfo(ModelMap modelMap, @RequestParam(value = &quot;id&quot;) Integer id)&#123;</div><div class="line">        UserInfo userInfo = userInfoService.getUsers(id);</div><div class="line">        modelMap.addAttribute(&quot;userInfo&quot;, userInfo);</div><div class="line">        return &quot;/user/showInfo&quot;;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>  3.5新增业务层代码<br>  <img src="https://i.imgur.com/DXbFMtZ.png" alt=""><br>  UserInfoService.java<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">package com.cookChen.service;</div><div class="line"></div><div class="line">import com.cookChen.model.UserInfo;</div><div class="line"></div><div class="line">public interface UserInfoService &#123;</div><div class="line"></div><div class="line">    UserInfo getUsers(Integer userId);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>  UserInfoServiceImpl.java<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">package com.cookChen.service.impl;</div><div class="line"></div><div class="line">import com.cookChen.dao.UserInfoDao;</div><div class="line">import com.cookChen.model.UserInfo;</div><div class="line">import com.cookChen.service.UserInfoService;</div><div class="line">import org.springframework.stereotype.Service;</div><div class="line">import org.springframework.transaction.annotation.Transactional;</div><div class="line"></div><div class="line">import javax.annotation.Resource;</div><div class="line"></div><div class="line"></div><div class="line">@Service(&quot;userInfoService&quot;)</div><div class="line">@Transactional</div><div class="line">public class UserInfoServiceImpl implements UserInfoService&#123;</div><div class="line"></div><div class="line">    @Resource</div><div class="line">    private UserInfoDao userInfoDao;</div><div class="line"></div><div class="line"></div><div class="line">    public UserInfo getUsers(Integer id) &#123;</div><div class="line">        return userInfoDao.selectByPrimaryKey(id);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>  3.6在webapp/WEB-INF/jsp下新建user/showInfo.jsp<br><img src="https://i.imgur.com/BFmJ50A.png" alt=""><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">&lt;%@ page language=&quot;java&quot; contentType=&quot;text/html; charset=UTF-8&quot; pageEncoding=&quot;UTF-8&quot;%&gt;</div><div class="line">&lt;%@ page  isELIgnored=&quot;false&quot;%&gt;</div><div class="line">&lt;html&gt;</div><div class="line">&lt;head&gt;</div><div class="line">    &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot;&gt;</div><div class="line">    &lt;title&gt;userInfo&lt;/title&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line"></div><div class="line">姓名： $&#123;userInfo.nickName&#125;</div><div class="line"></div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure></p>
+<p>  3.7运行项目，访问地址<a href="http://localhost:8888/user/showName?id=2，看到如下效果" target="_blank" rel="external">http://localhost:8888/user/showName?id=2，看到如下效果</a><br><img src="https://i.imgur.com/73XIEW4.png" alt=""></p>
+<h2 id="4-源代码"><a href="#4-源代码" class="headerlink" title="4.源代码"></a>4.源代码</h2><p><a href="https://github.com/coderChensl/ssmDemo" title="github地址" target="_blank" rel="external">https://github.com/coderChensl/ssmDemo</a></p>
+<p>  PS：绕坑指南<br>  jsp中的el表达式不起作用，参考<a href="http://blog.csdn.net/caixiexin/article/details/6958199" target="_blank" rel="external">http://blog.csdn.net/caixiexin/article/details/6958199</a></p>
+<p>  以上就是本次博客全部内容，目前为止，框架大致搭建起来，后面会陆续加入Shiro权限框架，拦截器，redis等内容</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>博主还要存钱娶媳妇。。。</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/uploads/wechat-reward-image.png" alt="CookChen 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/uploads/alipay.jpg" alt="CookChen 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    CookChen
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://coderChensl.github.io/2017/09/18/ssm6/" title="使用mybatis-generator工具创建mybatis相关代码">https://coderChensl.github.io/2017/09/18/ssm6/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/java框架、maven、spring-mvc、spring、mybatis/" rel="tag"># java框架、maven、spring mvc、spring、mybatis</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/09/18/ssm5/" rel="next" title="干货系列1.5--spring+springmvc+mybatis+maven之mybatis">
+                <i class="fa fa-chevron-left"></i> 干货系列1.5--spring+springmvc+mybatis+maven之mybatis
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          
+            <img class="site-author-image" itemprop="image"
+              src="/uploads/avatar.jpg"
+              alt="CookChen" />
+          
+            <p class="site-author-name" itemprop="name">CookChen</p>
+            <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+            
+              <a href="/archives">
+            
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/coderChensl" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>GitHub</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="wangyicsl@126.com" target="_blank" title="E-Mail">
+                  
+                    <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-前言"><span class="nav-number">1.</span> <span class="nav-text">1.前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-创建数据库"><span class="nav-number">2.</span> <span class="nav-text">2.创建数据库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-配置mybatis-generator插件"><span class="nav-number">3.</span> <span class="nav-text">3.配置mybatis-generator插件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-源代码"><span class="nav-number">4.</span> <span class="nav-text">4.源代码</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">CookChen</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+  <span class="post-meta-divider">|</span>
+  
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.2</div>
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
+
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'https://coderChensl.github.io/2017/09/18/ssm6/';
+          this.page.identifier = '2017/09/18/ssm6/';
+          this.page.title = '使用mybatis-generator工具创建mybatis相关代码';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("cKX1dNcDceqN4HMfgiIdywjz-gzGzoHsz", "xfzDh6p8qq8M4amPDdWGoYlT");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  	 <!-- custom analytics part create by xiamo -->
+<script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+<script>AV.initialize("cKX1dNcDceqN4HMfgiIdywjz-gzGzoHsz", "xfzDh6p8qq8M4amPDdWGoYlT");</script>
+<script>
+function showTime(Counter) {
+	var query = new AV.Query(Counter);
+	$(".leancloud_visitors").each(function() {
+		var url = $(this).attr("id").trim();
+		query.equalTo("url", url);
+		query.find({
+			success: function(results) {
+				if (results.length == 0) {
+					var content = $(document.getElementById(url)).text() + ': 0';
+					$(document.getElementById(url)).text(content);
+					return;
+				}
+				for (var i = 0; i < results.length; i++) {
+					var object = results[i];
+					var content = $(document.getElementById(url)).text() + ': ' + object.get('time');
+					$(document.getElementById(url)).text(content);
+				}
+			},
+			error: function(object, error) {
+				console.log("Error: " + error.code + " " + error.message);
+			}
+		});
+	});
+}
+function addCount(Counter) {
+	var Counter = AV.Object.extend("Counter");
+	url = $(".leancloud_visitors").attr('id').trim();
+	title = $(".leancloud_visitors").attr('data-flag-title').trim();
+	var query = new AV.Query(Counter);
+	query.equalTo("url", url);
+	query.find({
+		success: function(results) {
+			if (results.length > 0) {
+				var counter = results[0];
+				counter.fetchWhenSave(true);
+				counter.increment("time");
+				counter.save(null, {
+					success: function(counter) {
+						var content = $(document.getElementById(url)).text() + ': ' + counter.get('time');
+						$(document.getElementById(url)).text(content);
+					},
+					error: function(counter, error) {
+						console.log('Failed to save Visitor num, with error message: ' + error.message);
+					}
+				});
+			} else {
+				var newcounter = new Counter();
+				newcounter.set("title", title);
+				newcounter.set("url", url);
+				newcounter.set("time", 1);
+				newcounter.save(null, {
+					success: function(newcounter) {
+					    console.log("newcounter.get('time')="+newcounter.get('time'));
+						var content = $(document.getElementById(url)).text() + ': ' + newcounter.get('time');
+						$(document.getElementById(url)).text(content);
+					},
+					error: function(newcounter, error) {
+						console.log('Failed to create');
+					}
+				});
+			}
+		},
+		error: function(error) {
+			console.log('Error:' + error.code + " " + error.message);
+		}
+	});
+}
+$(function() {
+	var Counter = AV.Object.extend("Counter");
+	if ($('.leancloud_visitors').length == 1) {
+		addCount(Counter);
+	} else if ($('.post-title-link').length > 1) {
+		showTime(Counter);
+	}
+});
+</script>
+  
+</body>
+</html>
